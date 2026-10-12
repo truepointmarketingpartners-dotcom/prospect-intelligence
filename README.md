@@ -10,11 +10,11 @@ Base: https://prospect-intelligence.prospectintel.workers.dev
 
 | Method | Path | Price (USDC) | Tool |
 | --- | --- | --- | --- |
+| POST | /v1/email | **$0.08**, charged only when an address is returned | email_lookup |
 | `POST` | `/v1/basic` | **$0.10** | `research_company` |
 | `POST` | `/v1/enriched` | **$0.75** | `enrich_prospect` |
 | `POST` | `/v1/tools` | **$0.75** | any listed tool by name |
 | `POST` | `/v1/deep` | **$3.00** | deep company brief |
-| POST | /v1/email | **$0.08**, charged only when an address is returned | email_lookup |
 
 **Email lookup (v1.8.0):** returns Hunter's real verification status (`valid`, `accept_all`, `unknown`, …), whether the address was found on a public source or inferred from the company's pattern, source URLs with first/last seen dates, the confidence score, and a plain recommendation (`send`, `send_with_caution`, `verify_first`, `do_not_send`). Addresses are never labeled "verified" unless Hunter says so. No result returns 404 and costs $0. Body: `domain`, `first_name`, `last_name` (optional `found_only: true`).
 
